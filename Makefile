@@ -12,8 +12,7 @@ compile:
 		$(REBAR) compile
 
 rel: $(REBAR) deps compile
-		$(REBAR) generate -f overlay_vars=vars/vars.config
-
+		$(REBAR) generate -f
 run:
 		erl +Bd -noinput -noshell -sname sherly -heart -config sys.config \
 			-boot start_sasl -s crypto -s lager -run sherly
